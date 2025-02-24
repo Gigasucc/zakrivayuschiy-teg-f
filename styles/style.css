@@ -1,5 +1,4 @@
 /* Здесь вы напишете основную часть стилей страницы.
-
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
@@ -7,10 +6,275 @@
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-
 */
+
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: "Inter-Variable", sans-serif;
+  }
+}
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: var(--bg-image);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.header__container,
+.card,
+.footer__button {
+  background-color: var(--block-bg-color);
+}
+
+.header,
+.footer,
+button {
+  font-family: "PressStart2P-Regular", sans-serif;
+}
+
+.media-size__control {
+  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  margin: 0 auto;
+}
+
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header__container {
+  min-height: 327px;
+  border: 2px solid var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.page__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.page__subtitle {
+  text-transform: uppercase;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3.125rem, 3.081rem + 0.1878vw, 3.25rem);
+}
+
+.card {
+  outline: 2px solid var(--accent-color);
+}
+
+.card__title {
+  font-size: var(--card-text-size);
+  font-weight: 700;
+  inline-size: 90%;
+  padding: 4px 0 4px 10px;
+}
+
+.card__container {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-end;
+}
+
+.card__textarea {
+  font-size: var(--card-text-size);
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.card__text {
+  line-height: var(--card-text-line-height);
+}
+
+.image__container {
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  position: relative;
+}
+
+.image__title {
+  font-family: "PressStart2P-Regular", sans-serif;
+  font-size: var(--label-text-size);
+  position: absolute;
+  right: 13px;
+  top: 25px;
+  z-index: 1;
+  color: black;
+  opacity: 50%;
+  -webkit-text-stroke: 0.6px white;
+  isolation: isolate;
+  mix-blend-mode: hard-light;
+}
+
+.card-image {
+  display: block;
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
+.card:nth-child(2) .cover {
+  filter: saturate(35%);
+}
+
+.card:nth-child(3) .cover {
+  filter: saturate(300%);
+}
+
+.card:nth-child(4) .cover {
+  filter: hue-rotate(0.1turn);
+}
+
+.card:nth-child(5) .cover {
+  filter: invert(80%);
+}
+
+.card:nth-child(6) .cover {
+  filter: sepia(1);
+}
+
+.card:nth-child(7) .cover {
+  filter: blur(5px);
+}
+
+.card:nth-child(8) .cover {
+  filter: hue-rotate(0.3turn) contrast(50%);
+}
+
+.card__button__container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card__button {
+  width: 130px;
+  height: 38px;
+  border: 2px solid var(--accent-color);
+  text-transform: capitalize;
+}
+
+button {
+  background-color: var(--block-bg-color);
+  color: var(--button-text-color);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 103px;
+}
+
+.footer__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  width: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
+  height: 55px;
+  align-items: center;
+  font-size: var(--button-text);
+  border: 2px solid var(--accent-color);
+  text-transform: capitalize;
+}
+
+.footer .disk__icon {
+  width: 21px;
+  height: 21px;
+  mix-blend-mode: difference;
+}
+
+dialog::backdrop {
+  backdrop-filter: brightness(30%);
+}
+
+.input__dialog {
+  position: fixed;
+  inset: 0;
+  padding: 30px;
+  width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  max-height: 191px;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+
+dialog .disk__icon {
+  width: 39px;
+  height: 39px;
+}
+
+.dialog__container {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-block-end: 30px;
+}
+
+.dialog__text {
+  font-size: var(--label-text-size);
+  font-family: "PressStart2P-Regular", sans-serif;
+  text-transform: uppercase;
+  line-height: 120%;
+}
+
+.dialog__button {
+  width: 100%;
+  font-size: var(--button-text);
+  height: 38px;
+  border: 2px solid var(--accent-color);
+  text-transform: capitalize;
+}
+
+@media (width <= 376px) {
+  .media-size__control {
+    margin: 0;
+  }
+
+  .footer {
+    padding: 52px 0 100px;
+  }
+
+  .footer__button {
+    height: 84px;
+    flex-direction: column;
+  }
+
+  .footer .disk__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .input__dialog {
+    padding: 30px 40px;
+  }
 }
