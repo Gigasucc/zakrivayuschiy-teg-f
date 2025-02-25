@@ -68,13 +68,12 @@ button:hover::before {
 
 /*active*/
 
-.core {
+.core, .main-body {
   fill: transparent;
   transition: fill 0.3s ease;
 }
 
 .main-body {
-  fill: transparent;
   transition: fill 0.3s ease 0.05s;
 }
 

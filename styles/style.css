@@ -14,6 +14,12 @@
   }
 }
 
+@supports (text-stroke: 0.6px white) {
+  .image__title {
+    text-stroke: 0.6px white;
+  }
+}
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
