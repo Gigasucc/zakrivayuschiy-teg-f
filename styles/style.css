@@ -30,6 +30,10 @@
   background-size: cover;
 }
 
+.like-icon {
+  border: 2px solid transparent;
+}
+
 .header__container,
 .card,
 .footer__button {

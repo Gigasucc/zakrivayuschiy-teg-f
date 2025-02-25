@@ -36,6 +36,15 @@ button:hover::before {
   transform: translateX(0);
 }
 
+.like-icon:focus {
+  outline: none;
+  transition: border 0.3s;
+}
+
+.like-icon:focus-visible {
+  border: 2px solid black;
+} 
+
 /*hover*/
 
 .core {
