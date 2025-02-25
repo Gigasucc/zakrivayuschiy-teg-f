@@ -36,19 +36,19 @@ button {
 }
 
 .media-size__control {
-  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  width: clamp(375px, 16.2852rem + 30.5164vw, 700px);
   margin: 0 auto;
 }
 
 .header {
-  height: 100vh;
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .header__container {
-  min-height: 327px;
+  min-height: clamp(327px, 19.5792rem + 3.662vw, 366px);
   border: 2px solid var(--accent-color);
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@ button {
 .content {
   display: flex;
   flex-direction: column;
-  gap: clamp(3.125rem, 3.081rem + 0.1878vw, 3.25rem);
+  gap: clamp(52px, 3.081rem + 0.1878vw, 52px);
 }
 
 .card {
@@ -80,11 +80,11 @@ button {
   font-size: var(--card-text-size);
   font-weight: 700;
   inline-size: 90%;
-  padding: 4px 0 4px 10px;
+  padding: 6px 0 4px 12px;
 }
 
 .card__container {
-  padding: 25px;
+  padding: 23px 27px 25px 30px;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -162,7 +162,7 @@ button {
 .card__button__container {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 .card__button {
@@ -189,7 +189,7 @@ button {
 .footer {
   display: flex;
   justify-content: center;
-  padding: 50px 0 103px;
+  padding: 52px 0 103px;
 }
 
 .footer__button {
@@ -202,7 +202,6 @@ button {
   align-items: center;
   font-size: var(--button-text);
   border: 2px solid var(--accent-color);
-  text-transform: capitalize;
 }
 
 .footer .disk__icon {
@@ -256,12 +255,14 @@ dialog .disk__icon {
 }
 
 @media (width <= 376px) {
+
+
   .media-size__control {
     margin: 0;
   }
 
   .footer {
-    padding: 52px 0 100px;
+    padding: 47px 0 100px;
   }
 
   .footer__button {
