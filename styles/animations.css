@@ -68,15 +68,6 @@ button:hover::before {
 
 /*active*/
 
-.core, .main-body {
-  fill: transparent;
-  transition: fill 0.3s ease;
-}
-
-.main-body {
-  transition: fill 0.3s ease 0.05s;
-}
-
 .heart:active .core {
   fill: var(--heart-fill);
 }
