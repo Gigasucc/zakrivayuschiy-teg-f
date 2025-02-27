@@ -244,7 +244,7 @@
         </div>
       </section>
       <section class="save__section media-size__control">
-        <button class="save__button" onclick="window['dialog-id'].showModal();" aria-controls="dialog-id"><svg class="disk__icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 39 39" preserveAspectRatio="xMidYMid meet"><use href="./svg/icons.xml#disk"></use></svg><span class="button__text">Сохранить на память</span></button>
+        <button class="save__button" onclick="window['dialog-id'].showModal();" aria-controls="dialog-id" type="button"><svg class="disk__icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 39 39" preserveAspectRatio="xMidYMid meet"><use href="./svg/icons.xml#disk"></use></svg><span class="button__text">Сохранить на память</span></button>
       </section>
     </main> 
     <dialog class="input__dialog" id="dialog-id">
@@ -252,7 +252,9 @@
         <svg class="disk__icon" xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39"><use href="./svg/icons.xml#disk"></use></svg>
         <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
       </div>
-      <button class="dialog__button" type="button" onclick="window['dialog-id'].close();"><span class="button__text">OK</span></button>
+      <form method="dialog">
+        <button class="dialog__button"><span class="button__text">OK</span></button>
+      </form>
     </dialog>
     <script src="./scripts/like.js"></script>
   </body>
