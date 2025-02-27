@@ -15,8 +15,10 @@
   }
 }
 
-@supports (text-stroke: 0.6px white) {
+@supports (text-stroke: 0.6px white) or (-webkit-text-stroke: 0.6px white) {
   .image__title {
+    text-shadow: none;
+    -webkit-text-stroke: 0.6px white;
     text-stroke: 0.6px white;
   }
 }
@@ -36,14 +38,14 @@
 
 .header__container,
 .card,
-.footer__button {
+.save__button {
   background-color: var(--block-bg-color);
 }
 
 .header,
-.footer,
+.save__section,
 button {
-  font-family: "PressStart2P-Regular", sans-serif;
+  font-family: "PressStart2P", sans-serif;
 }
 
 .media-size__control {
@@ -59,7 +61,7 @@ button {
 }
 
 .header__container {
-  min-height: clamp(327px, 19.5792rem + 3.662vw, 366px);
+  padding: clamp(120px, 7.3239rem + 0.7512vw, 128px) 0;
   border: 2px solid var(--accent-color);
   display: flex;
   flex-direction: column;
@@ -91,11 +93,11 @@ button {
   font-size: var(--card-text-size);
   font-variation-settings: 'wght' var(--card-title-weight);
   inline-size: 90%;
-  padding: 6px 0 4px 12px;
+  padding: clamp(0.4375rem, 0.4155rem + 0.0939vw, 0.5rem) 0 3px 12px;
 }
 
 .card__container {
-  padding: 23px 27px 25px 30px;
+  padding: 25px 27px 22px 28px;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -120,15 +122,15 @@ button {
 }
 
 .image__title {
-  font-family: "PressStart2P-Regular", sans-serif;
+  font-family: "PressStart2P", sans-serif;
   font-size: var(--label-text-size);
   position: absolute;
-  right: 13px;
+  right: 25px;
   top: 25px;
   z-index: 1;
   color: black;
   opacity: 50%;
-  -webkit-text-stroke: 0.6px white;
+  text-stroke: 0.6px white;
   isolation: isolate;
   mix-blend-mode: hard-light;
 }
@@ -141,31 +143,31 @@ button {
   object-fit: cover;
 }
 
-.card:nth-child(2) .cover {
+.saturate {
   filter: saturate(35%);
 }
 
-.card:nth-child(3) .cover {
+.strong-saturate {
   filter: saturate(300%);
 }
 
-.card:nth-child(4) .cover {
+.hue-rotate {
   filter: hue-rotate(0.1turn);
 }
 
-.card:nth-child(5) .cover {
+.invert {
   filter: invert(80%);
 }
 
-.card:nth-child(6) .cover {
+.sepia {
   filter: sepia(1);
 }
 
-.card:nth-child(7) .cover {
+.blur {
   filter: blur(5px);
 }
 
-.card:nth-child(8) .cover {
+.double-filter {
   filter: hue-rotate(0.3turn) contrast(50%);
 }
 
@@ -173,11 +175,21 @@ button {
   display: flex;
   align-items: center;
   gap: 6px;
+  height: 38px;
 }
+
+.like-button {
+  height: 100%;
+  padding: 0;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+
 
 .card__button {
   width: 130px;
-  height: 38px;
+  height: 100%;
   border: 2px solid var(--accent-color);
   text-transform: capitalize;
 }
@@ -196,13 +208,13 @@ button {
   mix-blend-mode: difference;
 }
 
-.footer {
+.save__section {
   display: flex;
   justify-content: center;
-  padding: 52px 0 103px;
+  padding-bottom: 100px;
 }
 
-.footer__button {
+.save__button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -214,7 +226,7 @@ button {
   border: 2px solid var(--accent-color);
 }
 
-.footer .disk__icon {
+.save__section .disk__icon {
   width: 21px;
   height: 21px;
   mix-blend-mode: difference;
@@ -224,12 +236,9 @@ dialog::backdrop {
   backdrop-filter: brightness(30%);
 }
 
-.input__dialog {
-  position: fixed;
-  inset: 0;
+dialog[open] {
   padding: 30px;
   width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
-  max-height: 191px;
 }
 
 svg {
@@ -251,9 +260,9 @@ dialog .disk__icon {
 
 .dialog__text {
   font-size: var(--label-text-size);
-  font-family: "PressStart2P-Regular", sans-serif;
+  font-family: "PressStart2P", sans-serif;
   text-transform: uppercase;
-  line-height: 120%;
+  line-height: 150%;
 }
 
 .dialog__button {
@@ -266,26 +275,22 @@ dialog .disk__icon {
 
 @media (width <= 376px) {
 
-
-  .media-size__control {
-    margin: 0;
+  .image__title {
+    right: 13px;
+  }
+  
+  .save__section {
+    padding-top: 4px;
   }
 
-  .footer {
-    padding: 47px 0 100px;
-  }
-
-  .footer__button {
+  .save__button {
     height: 84px;
     flex-direction: column;
   }
 
-  .footer .disk__icon {
+  .save__section .disk__icon {
     width: 28px;
     height: 28px;
   }
 
-  .input__dialog {
-    padding: 30px 40px;
-  }
 }
