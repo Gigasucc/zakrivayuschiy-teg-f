@@ -15,14 +15,6 @@
   }
 }
 
-@supports (text-stroke: 0.6px white) or (-webkit-text-stroke: 0.6px white) {
-  .image__title {
-    text-shadow: none;
-    -webkit-text-stroke: 0.6px white;
-    text-stroke: 0.6px white;
-  }
-}
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -130,9 +122,16 @@ button {
   z-index: 1;
   color: black;
   opacity: 50%;
-  text-stroke: 0.6px white;
-  isolation: isolate;
+  text-shadow: 1px 1px white;
   mix-blend-mode: hard-light;
+}
+
+@supports (text-stroke: 0.6px white) or (-webkit-text-stroke: 0.6px white) {
+  .image__title {
+    text-shadow: none;
+    -webkit-text-stroke: 0.6px white;
+    text-stroke: 0.6px white;
+  }
 }
 
 .card-image {
