@@ -11,7 +11,7 @@
 @supports (font-variation-settings: normal) {
   .page {
     font-family: "Inter-Variable", sans-serif;
-    font-variation-settings: 'wght' var(--card-text-weight);
+    font-variation-settings: "wght" var(--card-text-weight);
   }
 }
 
@@ -83,7 +83,7 @@ button {
 
 .card__title {
   font-size: var(--card-text-size);
-  font-variation-settings: 'wght' var(--card-title-weight);
+  font-variation-settings: "wght" var(--card-title-weight);
   inline-size: 90%;
   padding: clamp(0.4375rem, 0.4155rem + 0.0939vw, 0.5rem) 0 3px 12px;
 }
@@ -184,8 +184,6 @@ button {
   transition: border 0.3s ease;
 }
 
-
-
 .card__button {
   width: 130px;
   height: 100%;
@@ -244,7 +242,6 @@ svg {
   flex-shrink: 0;
 }
 
-
 dialog .disk__icon {
   width: 39px;
   height: 39px;
@@ -273,11 +270,10 @@ dialog .disk__icon {
 }
 
 @media (width <= 376px) {
-
   .image__title {
     right: 13px;
   }
-  
+
   .save__section {
     padding-top: 4px;
   }
@@ -292,4 +288,7 @@ dialog .disk__icon {
     height: 28px;
   }
 
+  dialog[open] {
+    padding: 30px 40px;
+  }
 }
